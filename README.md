@@ -1,50 +1,115 @@
-# Welcome to your Expo app 👋
+# Firebird Fit 🔥
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern fitness and communication app designed specifically for high school athletes and coaches to replace traditional paper-based workout tracking and improve team communication.
 
-## Get started
+## 🌟 Features
 
-1. Install dependencies
+### For Athletes
+- **Dashboard**: Personalized widget-based home screen with workout stats and upcoming events
+- **Workouts**: View assigned workouts, track progress, and complete exercises
+- **Calendar**: See upcoming games, practices, and workout sessions
+- **Messages**: Team communication and direct messaging with coaches
+- **Profile**: Personal stats, achievements, and settings
 
+### For Coaches
+- **Dashboard**: Team management overview with athlete activity and stats
+- **Workout Management**: Create and assign workouts to individual athletes or groups
+- **Schedule Management**: Add games, practices, and team events to the calendar
+- **Team Communication**: Broadcast messages and manage team chats
+- **Athlete Monitoring**: Track team progress and individual performance
+
+## 🎨 Design
+
+The app features a beautiful, modern UI built with:
+- **Royal Blue** (#2B5CB0) - Primary brand color
+- **Gold** (#FFD700) - Secondary/accent color  
+- **Soft White** (#FAFAFA) - Background color
+
+## 🏗️ Tech Stack
+
+- **React Native** with **Expo** for cross-platform mobile development
+- **TypeScript** for type safety
+- **Expo Router** for navigation
+- **React Navigation** for tab and stack navigation
+- **Expo Linear Gradient** for beautiful gradient effects
+- **React Native Calendars** for calendar functionality
+- **React Native Gifted Chat** for messaging features
+- **AsyncStorage** for local data persistence
+
+## 📱 App Structure
+
+```
+FirebirdFit/
+├── app/
+│   ├── (tabs)/
+│   │   ├── index.tsx          # Home dashboard
+│   │   ├── workouts.tsx       # Workout management
+│   │   ├── calendar.tsx       # Schedule & calendar
+│   │   ├── messages.tsx       # Team communication
+│   │   ├── profile.tsx        # User profile
+│   │   └── _layout.tsx        # Tab navigation
+│   ├── auth.tsx               # Authentication screen
+│   ├── onboarding.tsx         # First-time user onboarding
+│   └── _layout.tsx            # Root layout with auth context
+├── contexts/
+│   └── AuthContext.tsx        # Authentication state management
+├── constants/
+│   └── Colors.ts              # App color scheme
+└── components/                # Reusable UI components
+```
+
+## 🚀 Getting Started
+
+1. **Install dependencies**
    ```bash
    npm install
    ```
 
-2. Start the app
-
+2. **Start the development server**
    ```bash
-   npx expo start
+   npm start
    ```
 
-In the output, you'll find options to open the app in a
+3. **Run on specific platforms**
+   ```bash
+   npm run android   # Android emulator/device
+   npm run ios       # iOS simulator (macOS only)
+   npm run web       # Web browser
+   ```
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 🔧 Development
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- **Type checking**: `npx tsc --noEmit`
+- **Linting**: `npm run lint`
+- **Dependency compatibility**: `npx expo install --fix`
 
-## Get a fresh project
+## 📋 Current Status
 
-When you're ready, run:
+✅ **Completed Features:**
+- Complete app framework and navigation
+- Authentication system with onboarding
+- Role-based UI (athlete vs coach)
+- Home dashboard with widgets
+- Workout creation and management
+- Calendar with event management
+- Team messaging system
+- User profile with stats and settings
 
-```bash
-npm run reset-project
-```
+🔄 **Next Steps:**
+- Backend integration
+- Real-time messaging
+- Push notifications
+- Offline functionality
+- Performance analytics
+- Team roster management
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🎯 Key Differentiators
 
-## Learn more
+- **Role-Based Experience**: Different interfaces and features for athletes vs coaches
+- **Modern UI/UX**: Beautiful, intuitive design that appeals to high school users
+- **Comprehensive Solution**: Replaces multiple tools (paper workouts, group chats, scheduling apps)
+- **Team-Focused**: Built specifically for team sports communication and coordination
 
-To learn more about developing your project with Expo, look at the following resources:
+---
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Built with ❤️ for high school athletics teams
