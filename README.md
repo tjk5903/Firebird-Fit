@@ -33,7 +33,8 @@ The app features a beautiful, modern UI built with:
 - **React Navigation** for tab and stack navigation
 - **Expo Linear Gradient** for beautiful gradient effects
 - **React Native Calendars** for calendar functionality
-- **React Native Gifted Chat** for messaging features
+- **Custom Chat Implementation** for messaging features (Expo Go compatible)
+- **React Native Gesture Handler** for enhanced navigation and swipe gestures
 - **AsyncStorage** for local data persistence
 
 ## 📱 App Structure
@@ -67,21 +68,21 @@ FirebirdFit/
 
 2. **Start the development server**
    ```bash
-   npm start
+   npx expo start
    ```
 
 3. **Run on specific platforms**
    ```bash
-   npm run android   # Android emulator/device
-   npm run ios       # iOS simulator (macOS only)
-   npm run web       # Web browser
+   npx expo start --android   # Android emulator/device
+   npx expo start --ios       # iOS simulator (macOS only)
+   npx expo start --web       # Web browser
    ```
 
 ## 🔧 Development
 
 - **Type checking**: `npx tsc --noEmit`
-- **Linting**: `npm run lint`
 - **Dependency compatibility**: `npx expo install --fix`
+- **Clear cache**: `npx expo start --clear`
 
 ## 📋 Current Status
 
@@ -92,8 +93,11 @@ FirebirdFit/
 - Home dashboard with widgets
 - Workout creation and management
 - Calendar with event management
-- Team messaging system
+- Team messaging system with custom implementation
 - User profile with stats and settings
+- **Enhanced Navigation**: Swipe-to-dismiss modals and improved back buttons
+- **Modern UX**: Gesture-based interactions and smooth animations
+- **Expo Go Compatible**: All features work in Expo Go for easy testing
 
 🔄 **Next Steps:**
 - Backend integration
@@ -106,9 +110,17 @@ FirebirdFit/
 ## 🎯 Key Differentiators
 
 - **Role-Based Experience**: Different interfaces and features for athletes vs coaches
-- **Modern UI/UX**: Beautiful, intuitive design that appeals to high school users
+- **Modern UI/UX**: Beautiful, intuitive design with swipe gestures and enhanced navigation
 - **Comprehensive Solution**: Replaces multiple tools (paper workouts, group chats, scheduling apps)
 - **Team-Focused**: Built specifically for team sports communication and coordination
+- **Expo Go Ready**: Fully compatible with Expo Go for immediate testing and development
+
+## 🎮 Enhanced Navigation Features
+
+- **Swipe Gestures**: All modals support swipe-down to dismiss
+- **Visual Feedback**: Swipe indicators and enhanced button styling
+- **Consistent UX**: Uniform navigation patterns across all screens
+- **Accessibility**: Improved touch targets and visual hierarchy
 
 ---
 
