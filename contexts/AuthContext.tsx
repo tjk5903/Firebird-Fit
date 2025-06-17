@@ -168,7 +168,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       setCurrentTeam(team);
       setUser(updatedUser);
       setTeamMembers([]);
-      
+
       return teamCode;
     } catch (error) {
       console.error('Error creating team:', error);
@@ -194,7 +194,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         createdAt: new Date(),
         isActive: true,
       };
-
+      
       // Create new team member
       const newMember: TeamMember = {
         id: Date.now().toString(),
