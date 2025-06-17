@@ -54,4 +54,5 @@ export const FirebirdColors = {
   success: '#4CAF50',
   warning: '#FF5722',
   error: '#F44336',
+  danger: '#DC2626',
 };
