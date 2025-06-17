@@ -10,6 +10,8 @@ import {
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { router } from 'expo-router';
+import * as Haptics from 'expo-haptics';
 
 import { FirebirdColors } from '@/constants/Colors';
 import { useAuth } from '@/contexts/AuthContext';
@@ -50,6 +52,48 @@ export default function HomeScreen() {
     if (hour < 12) return 'Good Morning';
     if (hour < 18) return 'Good Afternoon';
     return 'Good Evening';
+  };
+
+  const handleWorkoutAction = () => {
+    try {
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => {
+        // Ignore haptics errors
+      });
+      
+      router.push('/(tabs)/workouts');
+    } catch (error) {
+      console.error('Error in handleWorkoutAction:', error);
+      // Fallback navigation
+      router.push('/(tabs)/workouts');
+    }
+  };
+
+  const handleMessageAction = () => {
+    try {
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => {
+        // Ignore haptics errors
+      });
+      
+      router.push('/(tabs)/messages');
+    } catch (error) {
+      console.error('Error in handleMessageAction:', error);
+      // Fallback navigation
+      router.push('/(tabs)/messages');
+    }
+  };
+
+  const handleScheduleAction = () => {
+    try {
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => {
+        // Ignore haptics errors
+      });
+      
+      router.push('/(tabs)/calendar');
+    } catch (error) {
+      console.error('Error in handleScheduleAction:', error);
+      // Fallback navigation
+      router.push('/(tabs)/calendar');
+    }
   };
 
   const athleteWidgets = [
@@ -140,37 +184,37 @@ export default function HomeScreen() {
         <View style={styles.quickActions}>
           <Text style={styles.sectionTitle}>Quick Actions</Text>
           <View style={styles.actionsRow}>
-            <TouchableOpacity style={styles.actionButton}>
+            <TouchableOpacity style={styles.actionButton} onPress={handleWorkoutAction}>
               <LinearGradient
                 colors={[FirebirdColors.royalBlue + '20', FirebirdColors.royalBlue + '10']}
                 style={styles.actionGradient}
               >
-                <Ionicons name={isCoach ? 'add' : 'fitness'} size={24} color={FirebirdColors.royalBlue} />
+                <Ionicons name={isCoach ? 'add-circle' : 'play-circle'} size={24} color={FirebirdColors.royalBlue} />
                 <Text style={styles.actionText}>
-                  {isCoach ? 'Create Workout' : 'Start Workout'}
+                  {isCoach ? 'Create Workout' : 'Start Training'}
                 </Text>
               </LinearGradient>
             </TouchableOpacity>
             
-            <TouchableOpacity style={styles.actionButton}>
-              <LinearGradient
-                colors={[FirebirdColors.gold + '20', FirebirdColors.gold + '10']}
-                style={styles.actionGradient}
-              >
-                <Ionicons name="chatbubble" size={24} color={FirebirdColors.gold} />
-                <Text style={styles.actionText}>Send Message</Text>
-              </LinearGradient>
-            </TouchableOpacity>
-            
-            <TouchableOpacity style={styles.actionButton}>
+            <TouchableOpacity style={styles.actionButton} onPress={handleScheduleAction}>
               <LinearGradient
                 colors={[FirebirdColors.success + '20', FirebirdColors.success + '10']}
                 style={styles.actionGradient}
               >
-                <Ionicons name="calendar" size={24} color={FirebirdColors.success} />
+                <Ionicons name="calendar-outline" size={24} color={FirebirdColors.success} />
                 <Text style={styles.actionText}>
-                  {isCoach ? 'Schedule' : 'View Schedule'}
+                  {isCoach ? 'Manage Schedule' : 'My Schedule'}
                 </Text>
+              </LinearGradient>
+            </TouchableOpacity>
+            
+            <TouchableOpacity style={styles.actionButton} onPress={handleMessageAction}>
+              <LinearGradient
+                colors={[FirebirdColors.gold + '20', FirebirdColors.gold + '10']}
+                style={styles.actionGradient}
+              >
+                <Ionicons name="chatbubble-ellipses" size={24} color={FirebirdColors.gold} />
+                <Text style={styles.actionText}>Team Chat</Text>
               </LinearGradient>
             </TouchableOpacity>
           </View>
